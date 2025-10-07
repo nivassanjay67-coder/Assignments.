@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            background-color: pink; width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>Form</h2>
+        <fieldset>
+            <legend><strong>Regestration Form</strong></legend>
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <br><br>
+            <label for="email">Email Address: </label>
+            <input type="email" id="email" name="email" placeholder="example@ex.com" required>
+            <br><br>
+            <label for="password">Password: </label>
+            <input type="password" id="password" name="password" placeholder="Enter valid Password" required>
+            <br><br>
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female" required>
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other" required>
+            <label for="other">Other</label>
+            <br><br>
+            <p><strong>Hobby</strong></p>
+            <input type="checkbox" id="reading" name="hobby" value="Reading">
+            <label for="reading">Reading</label><br>
+            <input type="checkbox" id="Music" name="hobby" value="Music">
+            <label for="Music">Music</label><br>
+            <input type="checkbox" id="Dance" name="hobby" value="Dance">
+            <label for="Dance">Dance</label><br>
+            <input type="checkbox" id="other" name="hobby" value="Other">
+            <label for="other">Other</label>
+            <br><br>
+            <label for="age">Age: </label>
+            <input type="number" id="age" name="age" required >
+        </fieldset>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
