@@ -1,0 +1,21 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+    background-color: blueviolet;
+    padding-right: 5%;
+    margin-top: 5%;
+    padding-left: 5%;
+    border: 2px solid yellow;
+    border-radius: 20px;
+}
+p{
+    background-color: aquamarine;
+    color: red;
+}
+center{
+    color: pink;
+}
+h1,h2,h3{
+    color: antiquewhite;
+}
