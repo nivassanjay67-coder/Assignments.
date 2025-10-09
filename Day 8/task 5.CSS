@@ -1,0 +1,35 @@
+form{
+    text-align: center;
+    font-style: italic;
+    color: red;
+    border: 5px solid green;
+    border-radius: 50px;
+}
+h1{
+    color: pink;
+    background-color: brown;
+}
+input[type="text"]
+{
+    border: 2px solid yellow;
+    background-color: greenyellow;
+    color: red;
+}
+input[type="password"]
+{
+    color: pink;
+    background-color: red;
+    border: 2px solid black;
+}
+input::placeholder{
+    color: aqua;
+}
+fieldset{
+    background-color: aquamarine;
+    border: 10px solid burlywood;
+    border-radius: 20px;
+}
+legend{
+    color: red;
+    text-align: center;
+}
