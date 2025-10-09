@@ -1,0 +1,31 @@
+h1 i{
+    background-color: blue;
+    color: red;
+    border-radius: 20px;
+    border: 3px solid gray;
+}
+form{
+    background-color: pink;
+}
+label{
+    color: orange;
+}
+button{
+    color: red;
+    background-color: cadetblue;
+    border-radius: 20px;
+}
+input::placeholder{
+    color: yellow;
+}
+legend{
+    color: blueviolet;
+    background-color: azure;
+}
+textarea{
+    border-radius: 20px;
+    color: red;
+}
+textarea::placeholder{
+    color: yellow;
+}
