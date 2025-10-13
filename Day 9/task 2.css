@@ -1,0 +1,12 @@
+.box1{
+    border: 5px solid pink;
+    width: 250px;
+    margin: 50px;
+    background-color: aquamarine;
+}
+.box2{
+    border: 5px solid red;
+    width: 300px;
+    margin: 200px;
+    background-color: blueviolet;
+}
