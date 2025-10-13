@@ -1,0 +1,18 @@
+.box1{
+    border: 5px solid brown;
+    width: 300px;
+    background-color: aquamarine;
+    color: green;
+}
+.box2{
+    border: 5px dashed yellowgreen;
+    width: 300px;
+    background-color: crimson;
+    color: white;
+}
+.box3{
+    border: 5px double pink;
+    width: 200px;
+    background-color: aliceblue;
+    color: blueviolet;
+}
