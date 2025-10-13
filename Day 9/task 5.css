@@ -1,0 +1,17 @@
+.box1{
+    border: solid orange;
+    width: 200px;
+    margin: 50px;
+    padding: 20px;
+    background-color: blanchedalmond;
+    box-sizing: border-box;
+}
+.box2{
+    border: double red;
+    width: 200px;
+    margin: 200px;
+    padding: 30px;
+    background-color: black;
+    color: whitesmoke;
+    box-sizing: content-box;
+}
