@@ -1,0 +1,21 @@
+.container{
+    display: flexbox;
+    background: linear-gradient(red, brown, rgb(83, 23, 23));
+}
+.box{
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    padding: 5px;
+    margin: 10px;
+}
+.b1{
+    background-color: blueviolet;
+}
+.b2{
+    background-color: aqua;
+}
+.b3{
+    background-color: bisque;
+}
