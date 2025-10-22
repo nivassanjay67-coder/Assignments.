@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: brown;
+            color: white;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background-color: blueviolet;
+            gap: 20px;
+        }
+        .grid div{
+            background-color: orangered;
+            padding: 20px;
+            text-align: center;
+        }
+        @media(max-width: 600px){
+            .grid{
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media(max-width: 480px){
+            .grid{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media(max-width: 300px){
+          .grid{
+            grid-template-columns: 1fr;
+          }
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat magni, facilis inventore dolor repellendus deleniti nemo incidunt? Quidem molestias doloribus dignissimos explicabo ipsum quibusdam quas officia, vitae, nam laborum porro?</p>
+    <div class="grid">
+        <div>box 1</div>
+        <div>box 2</div>
+        <div>box 3</div>
+        <div>box 4</div>
+        <div>box 5</div>
+        <div>box 6</div>
+        <div>box 7</div>
+        <div>box 8</div>
+    </div>
+</body>
+</html>
