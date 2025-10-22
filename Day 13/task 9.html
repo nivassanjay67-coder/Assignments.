@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    html {
+      font-size: 16px; 
+    }
+
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem; 
+    }
+
+    p {
+      font-size: 1rem; 
+      line-height: 1.6em; 
+    }
+
+    .note {
+      font-size: 0.875em;
+      color: gray;
+    }
+    @media (min-width: 800px) {
+      html {
+        font-size: 18px; 
+      }
+    }
+
+    @media (min-width: 1200px) {
+      html {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Responsive Typography</h1>
+  <p>
+    This paragraph uses <code>rem</code> units for consistent sizing across the site. The font size and line height scale on larger screens.
+    <span class="note">This note uses <code>em</code> units relative to the paragraph size.</span>
+  </p>
+
+</body>
+</html>
