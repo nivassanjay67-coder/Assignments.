@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Progress Bar</title>
+  <style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: black;
+    }
+    .bar {
+      width: 300px;
+      height: 20px;
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .fill {
+      height: 100%;
+      width: 0;
+      background: #4caf50;
+      animation: fill 3s linear forwards;
+    }
+    @keyframes fill {
+      to { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bar"><div class="fill"></div></div>
+</body>
+</html>
