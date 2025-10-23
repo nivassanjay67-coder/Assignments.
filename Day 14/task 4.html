@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: blue;
+        }
+        .square{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation: rotatesquare 2s linear infinite;
+        }
+        @keyframes rotatesquare{
+            0%{
+               transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="square"></div>
+</body>
+</html>
