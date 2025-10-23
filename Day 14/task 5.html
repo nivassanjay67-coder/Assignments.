@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smooth Button Effects</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #121212;
+      font-family: Arial, sans-serif;
+    }
+
+    .smooth-btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1em;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease;
+    }
+    .smooth-btn:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    .smooth-btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.6);
+      transform: scale(1.05);
+    }
+    .smooth-btn:active {
+      transform: scale(0.97);
+    }
+  </style>
+</head>
+<body>
+  <button class="smooth-btn">Click Me</button>
+</body>
+</html>
