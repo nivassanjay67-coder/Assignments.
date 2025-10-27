@@ -1,0 +1,20 @@
+High-level and interpreted language: JavaScript is a high-level language that is interpreted (or just-in-time compiled) by a JavaScript engine, not compiled ahead of time like C++ or Java. This means code is executed line by line in its original text form.
+Dynamically typed: Variables in JavaScript are not bound to a specific data type and can hold values of different types during execution. This offers flexibility but can also lead to type-related errors.
+Core web technology: JavaScript is one of the three foundational technologies of the World Wide Web, alongside HTML and CSS. It is used to program the behavior of web pages and is executed directly in the browser.
+Client-side scripting: Primarily known as a client-side scripting language, JavaScript adds dynamic and interactive functionality to websites, such as animations, form validation, and interactive maps.
+Server-side applications with Node.js: Using runtime environments like Node.js, JavaScript can also be used for server-side development, allowing it to access databases and file systems.
+Full-stack capabilities: With the introduction of Node.js, developers can use JavaScript for both frontend and backend development, enabling full-stack application development using a single language.
+Asynchronous and event-driven: JavaScript's non-blocking, event-driven architecture allows it to handle multiple tasks concurrently without freezing the user interface, which is crucial for building responsive applications.
+First-class functions: Functions are treated as first-class objects, meaning they can be stored in variables, passed as arguments, or returned from other functions. This supports powerful functional programming patterns.
+Closures: Closures give an inner function access to the outer function's scope, even after the outer function has finished executing. They are used for data privacy and creating function factories.
+Prototypal inheritance: Instead of traditional class-based inheritance, JavaScript uses a prototype-based model. Objects can inherit properties and methods directly from other objects via a prototype chain.
+Document Object Model (DOM) manipulation: JavaScript can dynamically add, change, or remove HTML content and CSS styles on a page by interacting with the Document Object Model (DOM), which is a language-neutral API representation of a web page.
+Rich ecosystem of frameworks and libraries: JavaScript has a vast ecosystem of tools like React, Angular, and Vue.js for the frontend, and Express.js for the backend. These tools provide structure and simplify complex tasks.
+ECMAScript standard: JavaScript is an implementation of the ECMAScript standard, which is overseen by Ecma International to ensure interoperability across different web browsers.
+Modern features (ES6+): Since ES6 (2015), JavaScript has introduced many new features that enhance readability and functionality, such as arrow functions, template literals, and async/await for asynchronous operations.
+Cross-platform compatibility: JavaScript code can run on any platform with a compatible runtime environment, including web browsers, servers, and even desktop and mobile applications.
+Weak security on the client-side: Because client-side JavaScript code can be viewed and manipulated by users, it has security limitations. For instance, sensitive operations should be handled on the server side.
+Uses a JavaScript engine: Every web browser has a JavaScript engine (e.g., Chrome's V8, Firefox's SpiderMonkey) that translates JavaScript code into machine-readable instructions.
+Runtime environment components: A browser's JavaScript runtime environment includes the JavaScript engine, Web APIs (like the DOM and setTimeout), a callback queue, and an event loop.
+Supports multiple programming paradigms: JavaScript is a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles.
+TypeScript integration: TypeScript, a superset of JavaScript, adds optional static typing, which helps catch errors early and improves the developer experience in large-scale applications. TypeScript code is compiled into plain JavaScript. 
