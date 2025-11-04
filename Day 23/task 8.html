@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple To-Do List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      width: 250px;
+    }
+    button {
+      padding: 8px 12px;
+      font-size: 16px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    ul {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    li button {
+      margin-left: 10px;
+      padding: 3px 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>To-Do List</h2>
+  <input type="text" id="todoInput" placeholder="Add a new task...">
+  <button id="addBtn">Add</button>
+
+  <ul id="todoList"></ul>
+
+  <script>
+    const input = document.getElementById("todoInput");
+    const addBtn = document.getElementById("addBtn");
+    const list = document.getElementById("todoList");
+
+    // Add a new to-do item
+    addBtn.addEventListener("click", function() {
+      const task = input.value.trim();
+      if (task === "") return; // Do nothing if input is empty
+
+      // Create a new list item
+      const li = document.createElement("li");
+      li.textContent = task;
+
+      // Create a remove button for this item
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "Remove";
+      removeBtn.addEventListener("click", function() {
+        list.removeChild(li); // Remove the list item
+      });
+
+      li.appendChild(removeBtn); // Append the remove button to the li
+      list.appendChild(li);      // Append the li to the ul
+
+      input.value = ""; // Clear the input
+      input.focus();    // Focus back on input
+    });
+
+    // Optional: allow pressing Enter to add task
+    input.addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        addBtn.click();
+      }
+    });
+  </script>
+
+</body>
+</html>
