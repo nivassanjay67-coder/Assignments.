@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Buttons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      transition: background-color 0.3s;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      color: white;
+      border-radius: 5px;
+    }
+    #red { background-color: red; }
+    #green { background-color: green; }
+    #blue { background-color: blue; }
+    #yellow { background-color: goldenrod; }
+  </style>
+</head>
+<body>
+
+  <h2>Click a button to change background color</h2>
+  
+  <button id="red">Red</button>
+  <button id="green">Green</button>
+  <button id="blue">Blue</button>
+  <button id="yellow">Yellow</button>
+
+  <script>
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        document.body.style.backgroundColor = button.id;
+      });
+    });
+  </script>
+
+</body>
+</html>
