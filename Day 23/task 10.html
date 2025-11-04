@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Formatted HTML</title>
+</head>
+<body>
+
+  <div id="content"></div>
+
+  <button id="insertBtn">Insert Formatted Text</button>
+
+  <script>
+    const contentDiv = document.getElementById("content");
+    const button = document.getElementById("insertBtn");
+
+    button.addEventListener("click", function() {
+      contentDiv.innerHTML = `
+        <p>This is <b>bold</b> text and this is <i>italic</i> text.</p>
+        <p>You can also combine them: <b><i>Bold & Italic</i></b></p>
+      `;
+    });
+  </script>
+
+</body>
+</html>
