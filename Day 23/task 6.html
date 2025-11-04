@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dark-mode{
+            background-color: black;
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+<body  id="dark">
+    <h1>Change to Dark mode</h1>
+    <button onclick="changedarkmode()">Click Me</button>
+    <script>
+        function changedarkmode(){
+            document.getElementById("dark").classList.toggle("dark-mode")
+        }
+    </script>
+</body>
+</html>
