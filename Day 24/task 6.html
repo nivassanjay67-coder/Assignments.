@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Validation with try...catch</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    .error { color: red; }
+    .success { color: green; }
+  </style>
+</head>
+<body>
+  <h2>Simple Form Validation</h2>
+  
+  <form id="myForm">
+    <label for="age">Enter your age:</label><br>
+    <input type="number" id="age" placeholder="Age" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    const form = document.getElementById('myForm');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      message.textContent = ''; 
+
+      try {
+        const age = parseInt(document.getElementById('age').value.trim(), 10);
+
+        if (isNaN(age)) {
+          throw new Error("Please enter a valid number.");
+        }
+        if (age < 0) {
+          throw new Error("Age cannot be negative.");
+        }
+        if (age < 18) {
+          throw new Error("You must be at least 18 years old.");
+        }
+
+        message.textContent = "Form submitted successfully!";
+        message.className = "success";
+
+      } catch (error) {
+        message.textContent = error.message;
+        message.className = "error";
+        console.error("Validation error:", error);
+      }
+    });
+  </script>
+</body>
+</html>
