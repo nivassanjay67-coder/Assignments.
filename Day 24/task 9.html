@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Color Changer</title>
+  <style>
+    #colorBox {
+      width: 150px;
+      height: 150px;
+      background-color: lightblue;
+      border: 2px solid #333;
+      margin: 20px auto;
+      transition: background-color 0.3s;
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    #error {
+      text-align: center;
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="colorBox"></div>
+  <button onclick="changeColor()">Change Color</button>
+  <div id="error"></div>
+
+  <script>
+    function changeColor() {
+      const errorDiv = document.getElementById("error");
+      errorDiv.textContent = "";
+
+      try {
+        const box = document.getElementById("colorBox");
+        if (!box) {
+          throw new Error("Element not found!");
+        }
+
+        const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+        box.style.backgroundColor = randomColor;
+      } catch (err) {
+        errorDiv.textContent = err.message;
+      }
+    }
+  </script>
+
+</body>
+</html>
