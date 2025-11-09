@@ -24,10 +24,7 @@ function validateFormData(name, email, age) {
 
   console.log("✅ Validation passed for:", name);
 }
-
-// ✅ Example usage with try...catch...finally
 try {
-  // ❌ Try changing these values to trigger different errors
   const name = "Alice";
   const email = "alice@example.com";
   const age = 16;
