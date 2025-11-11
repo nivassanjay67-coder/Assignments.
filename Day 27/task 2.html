@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Profile Data</title>
+</head>
+<body>
+  <h1>GitHub User Info</h1>
+  <p><strong>Login:</strong> <span id="login"></span></p>
+  <p><strong>Public Repos:</strong> <span id="repos"></span></p>
+
+  <script>
+    fetch("https://api.github.com/users/octocat") 
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
+        }
+        return response.json();
+      })
+      .then(data => {
+        document.getElementById("login").textContent = data.login;
+        document.getElementById("repos").textContent = data.public_repos;
+      })
+      .catch(error => {
+        console.error("Error fetching GitHub data:", error);
+      });
+  </script>
+</body>
+</html>
