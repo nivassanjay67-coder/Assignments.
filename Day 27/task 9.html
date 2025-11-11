@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Followers Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f5f7fa;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 1em;
+      margin-right: 8px;
+      width: 250px;
+    }
+
+    button {
+      padding: 8px 12px;
+      background-color: #0366d6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #024b9a;
+    }
+
+    .followers {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .follower {
+      text-align: center;
+      margin: 10px;
+      padding: 10px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 120px;
+      transition: transform 0.2s;
+    }
+
+    .follower:hover {
+      transform: scale(1.05);
+    }
+
+    .follower img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .error {
+      color: red;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .spinner {
+      display: none;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .spinner div {
+      width: 16px;
+      height: 16px;
+      background-color: #0366d6;
+      border-radius: 100%;
+      display: inline-block;
+      animation: bounce 1.4s infinite ease-in-out both;
+      margin: 0 3px;
+    }
+
+    .spinner div:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    .spinner div:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+
+    @keyframes bounce {
+      0%, 80%, 100% {
+        transform: scale(0);
+      } 40% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>GitHub Followers Viewer</h1>
+  <input type="text" id="username" placeholder="Enter GitHub username" />
+  <button id="fetchBtn">Show Followers</button>
+  <p class="error" id="error"></p>
+  <div class="spinner" id="spinner">
+    <div></div><div></div><div></div>
+    <p>Loading followers...</p>
+  </div>
+
+  <div class="followers" id="followersList"></div>
+
+  <script>
+    const fetchBtn = document.getElementById("fetchBtn");
+    const followersList = document.getElementById("followersList");
+    const errorEl = document.getElementById("error");
+    const spinner = document.getElementById("spinner");
+    const usernameInput = document.getElementById("username");
+
+    async function fetchFollowers() {
+      const username = usernameInput.value.trim();
+      followersList.innerHTML = "";
+      errorEl.textContent = "";
+
+      if (!username) {
+        errorEl.textContent = "⚠️ Please enter a GitHub username.";
+        return;
+      }
+
+      spinner.style.display = "block";
+
+      try {
+        const response = await fetch(`https://api.github.com/users/${username}/followers`);
+
+        if (!response.ok) {
+          if (response.status === 404) {
+            throw new Error("User not found. Please check the username and try again.");
+          } else {
+            throw new Error(`GitHub API error (status ${response.status})`);
+          }
+        }
+
+        const followers = await response.json();
+
+        if (followers.length === 0) {
+          followersList.innerHTML = `<p>No followers found for <strong>${username}</strong>.</p>`;
+          return;
+        }
+
+        followers.forEach(follower => {
+          const div = document.createElement("div");
+          div.className = "follower";
+          div.innerHTML = `
+            <img src="${follower.avatar_url}" alt="${follower.login}'s avatar" />
+            <p><a href="${follower.html_url}" target="_blank">${follower.login}</a></p>
+          `;
+          followersList.appendChild(div);
+        });
+      } catch (error) {
+        console.error("Error fetching followers:", error);
+        errorEl.textContent = "❌ " + error.message;
+      } finally {
+        spinner.style.display = "none"; 
+      }
+    }
+    fetchBtn.addEventListener("click", fetchFollowers);
+
+    usernameInput.addEventListener("keypress", e => {
+      if (e.key === "Enter") fetchFollowers();
+    });
+  </script>
+</body>
+</html>
