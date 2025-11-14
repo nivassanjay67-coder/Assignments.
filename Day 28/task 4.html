@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Read JSON from localStorage</title>
+</head>
+<body>
+
+  <h2>Reading JSON Data</h2>
+
+  <script>
+    const jsonData = localStorage.getItem("userData");
+    const dataObject = JSON.parse(jsonData);
+    console.log("Parsed data:", dataObject);
+  </script>
+
+</body>
+</html>
