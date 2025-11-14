@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Store Object in localStorage</title>
+</head>
+<body>
+
+  <h2>Store Object in localStorage</h2>
+
+  <script>
+    const user = {
+      name: "Alice",
+      course: "Computer Science",
+      year: 2025
+    };
+    const jsonUser = JSON.stringify(user);
+    localStorage.setItem("userData", jsonUser);
+    const storedData = localStorage.getItem("userData");
+    const parsedUser = JSON.parse(storedData);
+    console.log("Object stored:", parsedUser);
+  </script>
+
+</body>
+</html>
