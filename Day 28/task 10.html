@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Current Time Logger</title>
+</head>
+<body>
+
+<h2>Current Time Logger</h2>
+<p>Current time: <span id="currentTime"></span></p>
+<button id="saveTimeBtn">Save Current Time</button>
+
+<script>
+const timeDisplay = document.getElementById("currentTime");
+const saveBtn = document.getElementById("saveTimeBtn");
+
+function getCurrentTime() {
+    const now = new Date();
+    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ` +
+           `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
+}
+
+timeDisplay.textContent = getCurrentTime();
+
+saveBtn.addEventListener("click", () => {
+    const currentTime = getCurrentTime();
+    sessionStorage.setItem("savedTime", currentTime);
+    console.log("Saved current time:", currentTime);
+    alert(`Current time saved: ${currentTime}`);
+});
+
+const saved = sessionStorage.getItem("savedTime");
+if (saved) {
+    console.log("Previously saved time:", saved);
+}
+</script>
+
+</body>
+</html>
