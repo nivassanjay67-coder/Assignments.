@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Session Time Example</title>
+</head>
+<body>
+
+  <h2>Session Time Tracker</h2>
+  <p>Time spent this session: <span id="time"></span> seconds</p>
+
+  <script>
+    if (!sessionStorage.getItem("sessionStart")) {
+      sessionStorage.setItem("sessionStart", Date.now());
+    }
+
+    function updateSessionTime() {
+      const start = Number(sessionStorage.getItem("sessionStart"));
+      const seconds = Math.floor((Date.now() - start) / 1000);
+      document.getElementById("time").textContent = seconds;
+    }
+    setInterval(updateSessionTime, 1000);
+    updateSessionTime();
+  </script>
+
+</body>
+</html>
