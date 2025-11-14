@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Debug This Code Quiz</title>
+<style>
+  body { font-family: Arial; max-width: 700px; margin: 40px auto; }
+  pre { background: #222; color: #0f0; padding: 15px; border-radius: 6px; }
+  .question-box { margin-bottom: 35px; }
+  .feedback { font-weight: bold; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<h1>🐞 Debug This Code – Mini Quiz</h1>
+<p>Find the bug in each snippet and explain how to fix it.</p>
+
+<div id="quiz"></div>
+
+<script>
+const questions = [
+  {
+    title: "1. What’s wrong with this JavaScript?",
+    code: `let total = 0;
+for (let i = 1; i <= 5; i++) {
+    total = total + i;
+}
+console.log(Total);`,
+    answer: "Total is capitalized" 
+  },
+  {
+    title: "2. Debug this Python code:",
+    code: `numbers = [1, 2, 3, 4]
+for n in numbers:
+    print(n)
+  print("Done")`,
+    answer: "indent"
+  },
+  {
+    title: "3. What’s the bug in this HTML?",
+    code: `<img src="cat.png">
+<p> Cute cat! </p>
+</img>`,
+    answer: "img tag" 
+  }
+];
+const quizContainer = document.getElementById("quiz");
+
+questions.forEach((q, index) => {
+  const box = document.createElement("div");
+  box.className = "question-box";
+
+  box.innerHTML = `
+    <h3>${q.title}</h3>
+    <pre>${q.code}</pre>
+    <label>Your answer:</label><br>
+    <textarea id="answer-${index}" rows="3" style="width:100%;"></textarea><br>
+    <button onclick="checkAnswer(${index})">Check</button>
+    <div id="feedback-${index}" class="feedback"></div>
+  `;
+
+  quizContainer.appendChild(box);
+});
+function checkAnswer(i) {
+  const user = document.getElementById(`answer-${i}`).value.toLowerCase();
+  const needed = questions[i].answer.toLowerCase();
+  const box = document.getElementById(`feedback-${i}`);
+
+  if (user.includes(needed)) {
+    box.style.color = "green";
+    box.textContent = "✔ Correct! Nice debugging.";
+  } else {
+    box.style.color = "red";
+    box.textContent = "✘ Not quite — try again.";
+  }
+}
+</script>
+
+</body>
+</html>
