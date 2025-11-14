@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DevTools Experiment</title>
+</head>
+<body>
+
+  <h2>DevTools Debugging Practice</h2>
+
+  <script>
+    const user = {
+      name: "Alice",
+      course: "Web Development",
+      skills: ["HTML", "CSS", "JavaScript"]
+    };
+
+    const students = [
+      { id: 1, name: "John", grade: 85 },
+      { id: 2, name: "Maria", grade: 92 },
+      { id: 3, name: "Liam", grade: 78 }
+    ];
+    console.log("User object:", user);
+    console.log("Skills:", user.skills);
+    console.table(students);
+    function calculateAverageGrade(list) {
+      debugger;  
+      let total = 0;
+      for (let s of list) {
+        total += s.grade;
+      }
+      return total / list.length;
+    }
+
+    const avg = calculateAverageGrade(students);
+    console.log("Average grade:", avg);
+  </script>
+
+</body>
+</html>
