@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Location</title>
+</head>
+<body>
+
+  <h2>Your Current Location</h2>
+
+  <p><strong>Latitude:</strong> <span id="lat">Loading...</span></p>
+  <p><strong>Longitude:</strong> <span id="lon">Loading...</span></p>
+
+  <script>
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          document.getElementById("lat").textContent = position.coords.latitude;
+          document.getElementById("lon").textContent = position.coords.longitude;
+        },
+        function(error) {
+          document.getElementById("lat").textContent = "Error";
+          document.getElementById("lon").textContent = error.message;
+        }
+      );
+    } else {
+      document.getElementById("lat").textContent = "Not supported";
+      document.getElementById("lon").textContent = "Not supported";
+    }
+  </script>
+
+</body>
+</html>
