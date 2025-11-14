@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="locationInput" type="text" placeholder="Enter location..." />
+    <button id="saveLocationBtn">Save Location</button>
+    <p>Saved Location: <span id="savedLocationDisplay"></span></p>
+    <script>
+        const input = document.getElementById("locationInput");
+        const saveBtn = document.getElementById("saveLocationBtn");
+        const display = document.getElementById("savedLocationDisplay");
+        const saved = localStorage.getItem("location");
+    if (saved) {
+  display.textContent = saved;
+}
+
+saveBtn.addEventListener("click", () => {
+  const value = input.value.trim();
+
+  if (!value) {
+    alert("Please enter a location first.");
+    return;
+  }
+
+  localStorage.setItem("location", value);
+  display.textContent = value;
+
+  alert("Location saved!");
+});
+
+    </script>
+</body>
+</html>
