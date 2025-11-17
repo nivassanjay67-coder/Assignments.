@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        #notification {
+            width: 300px;
+            padding: 15px;
+            background: #4caf50;
+            color: white;
+            border-radius: 4px;
+            display: none; 
+            margin-top: 15px;
+            position: relative;
+        }
+        #closeNotif {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button id="showNotifBtn">Show Notification</button>
+
+    <div id="notification">
+        <span id="closeNotif">✕</span>
+        This is a sliding notification box!
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#showNotifBtn").click(function () {
+                $("#notification").slideDown(300);
+            });
+
+            $("#closeNotif").click(function () {
+                $("#notification").slideUp(300);
+            });
+        });
+    </script>
+</body>
+</html>
