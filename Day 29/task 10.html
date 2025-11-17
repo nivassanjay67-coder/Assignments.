@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Toggler</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        .message {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .correct {
+            background: #c8f7c5;
+            color: #2c7a2c;
+        }
+
+        .wrong {
+            background: #f8d0d0;
+            color: #a33a3a;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Quiz Question</h2>
+    <p>Which planet is known as the Red Planet?</p>
+
+    <button class="answer" data-answer="wrong">Earth</button>
+    <button class="answer" data-answer="correct">Mars</button>
+    <button class="answer" data-answer="wrong">Venus</button>
+
+    <div id="correctMsg" class="message correct">Correct! Mars is the Red Planet!</div>
+    <div id="wrongMsg" class="message wrong">Incorrect. Try again!</div>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".answer").click(function () {
+
+                $("#correctMsg, #wrongMsg").hide();
+
+                if ($(this).data("answer") === "correct") {
+                    $("#correctMsg").show();
+                } else {
+                    $("#wrongMsg").show();
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>
