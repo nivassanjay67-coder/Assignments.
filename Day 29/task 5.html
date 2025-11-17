@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+     <button id="slideBtn">Slide Toggle</button>
+
+    <div id="panel" style="
+        width: 200px;
+        padding: 20px;
+        background: lightblue;
+        display: none;
+        margin-top: 10px;
+    ">
+        This is a sliding panel.
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#slideBtn").click(function () {
+                $("#panel").slideToggle(300);
+            });
+        });
+    </script>
+</body>
+</html>
