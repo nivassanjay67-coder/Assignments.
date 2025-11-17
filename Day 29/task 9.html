@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .fade-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section {
+            padding: 80px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #topBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            display: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section class="fade-section" id="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Front-end Developer • Designer • Creator</p>
+    </section>
+
+    <section class="fade-section">
+        <h2>About Me</h2>
+        <p>Information about who you are and what you do.</p>
+    </section>
+
+    <section class="fade-section">
+        <h2>Projects</h2>
+        <p>Some featured project examples.</p>
+    </section>
+
+    <section class="fade-section">
+        <h2>Contact</h2>
+        <p>Ways people can reach you.</p>
+    </section>
+
+    <div id="topBtn">Top ↑</div>
+
+    <script>
+        $(document).ready(function () {
+
+    $("#hero").addClass("fade-in");
+
+    function fadeOnScroll() {
+        $(".fade-section").each(function () {
+            const sectionTop = $(this).offset().top;
+            const scrollBottom = $(window).scrollTop() + $(window).height();
+
+            if (scrollBottom > sectionTop + 60) {
+                $(this).addClass("fade-in");
+            }
+        });
+    }
+
+    fadeOnScroll(); 
+    $(window).on("scroll", function () {
+        fadeOnScroll();
+
+        if ($(window).scrollTop() > 200) {
+            $("#topBtn").fadeIn(300);
+        } else {
+            $("#topBtn").fadeOut(300);
+        }
+    });
+
+    $("#topBtn").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 600);
+    });
+
+});
+
+    </script>
+
+</body>
+</html>
