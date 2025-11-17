@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .card {
+            width: 260px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 15px;
+            cursor: pointer;
+            background: #fafafa;
+            transition: background 0.2s;
+        }
+        .card:hover {
+            background: #f0f0f0;
+        }
+        .card-content {
+            display: none;
+            margin-top: 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="infoCard">
+        <h3 class="card-title">More Info</h3>
+        <div class="card-content">
+            <p>
+                This is the detailed information inside the card.  
+                Click the card again to collapse it.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#infoCard").click(function () {
+                $(this).find(".card-content").slideToggle(200);
+            });
+        });
+    </script>
+</body>
+</html>
