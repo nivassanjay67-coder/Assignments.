@@ -18,8 +18,5 @@ INSERT INTO employees (employee_id, first_name, last_name, salary, hire_date, de
 (8, 'Ava', 'Green', 99000, '2018-11-20', 1, 1);
 SELECT department_id, COUNT(*) AS num_employees
 FROM employees
-GROUP BY department_id;
-SELECT department_id, COUNT(*) AS num_employees
-FROM employees
 GROUP BY department_id
 HAVING COUNT(*) > 5;
