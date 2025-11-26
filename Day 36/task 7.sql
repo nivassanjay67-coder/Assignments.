@@ -1,0 +1,7 @@
+SELECT 
+    TIMESTAMPDIFF(YEAR, '2000-06-15', '2025-11-26') AS years_diff,
+    TIMESTAMPDIFF(MONTH, '2000-06-15', '2025-11-26') % 12 AS months_diff,
+    DATEDIFF('2025-11-26', '2000-06-15') - 
+        (TIMESTAMPDIFF(MONTH, '2000-06-15', '2025-11-26') * 30) AS days_diff,
+    DATEDIFF('2025-11-26', '2000-06-15') AS total_days
+;
