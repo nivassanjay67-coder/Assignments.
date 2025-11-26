@@ -1,0 +1,2 @@
+SELECT 
+    DATEDIFF('2026-01-01', CURDATE()) AS days_left;
